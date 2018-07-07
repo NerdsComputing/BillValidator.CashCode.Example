@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="BillValidator.CashCode.Example.Pages.MainExample.MainExampleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d">
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical">
+                <TextBox Text="{Binding BillValidatorPort}" />
+                <TextBlock/>
+                <Button Content="Connect" Command="{Binding ConnectCommand}" />
+                <TextBlock/>
+                <Button Content="Disconnect" Command="{Binding DisconnectCommand}" />
+                <TextBlock/>
+                <TextBlock/>
+                <TextBlock/>
+                <Button Content="Enable accepting bills" Command="{Binding EnableBillValidatorCommand}" />
+                <TextBlock/>
+                <Button Content="Disable accepting bills" Command="{Binding DisableBillValidatorCommand}" />
+                <TextBlock/>
+                <TextBlock/>
+                <TextBlock/>
+                <CheckBox Content="Auto-accept bills" IsChecked="{Binding IsAutoAcceptBill}" />
+                <TextBlock/>
+                <TextBlock/>
+                <TextBlock/>
+                <TextBlock Text="{Binding CollectedMoneySum, StringFormat={}Collected: {0} RON}"/>
+                <Button Content="Reset collected money" Command="{Binding ResetCollectedMoneySumCommand}" />
+            </StackPanel>
+            <ListBox Margin="100 0 0 0" ItemsSource="{Binding LogList}" Width="500" Height="450" Loaded="ListBox_Loaded" BorderThickness="0 0 0 1" BorderBrush="#CACACA" />
+        </StackPanel>
+    </Grid>
+</UserControl>
